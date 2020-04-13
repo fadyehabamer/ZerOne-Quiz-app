@@ -1,6 +1,5 @@
 const questionnumber = document.querySelector(".question-num-value");
 const questiontotal = document.querySelector(".question-total-value");
-
 const options = document.querySelector(".options").children;
 const question = document.querySelector(".question");
 const op1 = document.querySelector(".option1");
@@ -10,6 +9,7 @@ const op4 = document.querySelector(".option4");
 const correctans = document.querySelector(".correct-answers");
 const totalans = document.querySelector(".total-answers");
 const percentage = document.querySelector(".percentage");
+
 
 let questionindex;
 let index = 0; // for question number
@@ -62,8 +62,10 @@ function load() {
 
 function randomquestion() {
   let randomnumber = Math.floor(Math.random() * questions.length);
-  let deldub = 0;
+  let deldub = 0; // dublication
   if (index == questions.length) {
+    var next_dis = document.getElementById("next");
+    next_dis.style.display="none";
     quizover();
   } else {
     if (myarray.length > 0) {
@@ -95,6 +97,7 @@ function check(element) {
   if (element.id == questions[questionindex].a) {
     element.classList.add("correct");
     score++;
+    console.log("score is : "+ score )
   } else {
     element.classList.add("wrong");
   }
@@ -118,11 +121,12 @@ function enable() {
 }
 
 function validate() {
-  if (! options[0].classList.contains("disabled")) {
+  if (!options[0].classList.contains("disabled")) {
     alert("you must select any option");
   } else {
-    randomquestion();
     enable();
+    randomquestion();
+    
   }
 }
 
@@ -135,7 +139,28 @@ function quizover() {
   correctans.innerHTML = score;
   totalans.innerHTML = questions.length;
   percentage.innerHTML = (score / questions.length) * 100;
+ 
+  if(percentage.innerHTML == 100){
+  document.querySelector(".full").classList.add("show-meme");
+  }
+  else if(percentage.innerHTML == 80){
+    document.querySelector(".eighty").classList.add("show-meme");
+  }
+  else if(percentage.innerHTML == 60){
+    document.querySelector(".sixty").classList.add("show-meme");
+  }
+  else if(percentage.innerHTML == 40){
+    document.querySelector(".forty").classList.add("show-meme");
+  }
+  else if(percentage.innerHTML == 20){
+    document.querySelector(".twenty").classList.add("show-meme");
+  }
+  else if(percentage.innerHTML == 0){
+    document.querySelector(".zero").classList.add("show-meme");
+  }
 }
+
+
 function tryagain() {
   window.location.reload();
 }

@@ -29,10 +29,10 @@
         </div>
 
         <div class="score">
-            <div class="next btn ">
+            <div class="next btn " id="next">
                 <button type="button" onclick="next()"> next </button>
             </div>
-            
+
         </div>
 
     </div>
@@ -41,14 +41,38 @@
 
 
 
-
     <div class="quiz-over">
         <div class="box">
-            <h1> Good Job ! <br> You answered <br> <span class="correct-answers"></span> / <span class="total-answers">
+            <h1 class="good">You answered <br> <span class="correct-answers"></span> / <span class="total-answers">
                 </span> <br>
                 that is
                 <span class="percentage"></span>% </h1>
-            <button type="button" onclick="tryagain()">Try Again</button>
+
+
+
+            <div class="meme">
+                <div class="full"><img src="images/100.jpg" alt="">
+                    <h2>💃💃💃💃💃💃💃💃💃💃💃💃</h2>
+                </div>
+                <div class="eighty"><img src="images/80.jpg" alt="">
+                    <h2> 😘😘 اشطا حلو </h2>
+                </div>
+                <div class="sixty"><img src="images/60.jpg" alt="">
+                    <h2>🙄🙄🙄🙄🙄ما تشد حيلك شويه </h2>
+                </div>
+                <div class="forty"><img src="images/40.jpg" alt="">
+                    <h2>😑😑😑هو اي ده </h2>
+                </div>
+                <div class="twenty"><img src="images/20.jpeg" alt="">
+                    <h2>🤷‍♂🤷‍♂️عايز ايه حضرتك؟</h2>
+                </div>
+                <div class="zero"><img src="images/0.jpeg" alt="">
+                    <h2>🙃🙃 هل انت معانا في الكليه
+                    </h2>
+                </div>
+            </div>
+
+            <button class="try" type="button" onclick="tryagain()">Try Again</button>
         </div>
     </div>
 

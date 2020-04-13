@@ -13,7 +13,6 @@ body {
   box-sizing: border-box;
 }
 
-
 h3 {
   text-align: center;
   font-family: monospace;
@@ -21,9 +20,9 @@ h3 {
   color: white;
   font-size: 40px;
 }
-.zerone{
-    color: white;
-    text-align: center;
+.zerone {
+  color: white;
+  text-align: center;
   font-family: monospace;
   margin: 15px 0 -10px 0;
   font-size: 70px;
@@ -73,7 +72,7 @@ h3 {
   margin-top: 20px;
   color: white;
   box-shadow: 0 3px 0 grey;
-  cursor: pointer;
+  cursor: pointer !important;
   list-style: none;
 }
 .options ul li:active {
@@ -102,44 +101,100 @@ h3 {
 .score .next button:active {
   box-shadow: 0 0 0 transparent;
 }
-.quiz-over .show{
+.quiz-over.show {
   display: flex;
 }
+
 .quiz-over {
-   display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 10;
-    align-items: center;
-    font-family: monospace;
-    text-align: center;
-    justify-content: center;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  align-items: center;
+  font-family: monospace;
+  text-align: center;
+  justify-content: center;
 }
 .quiz-over .box {
   color: white;
   background-color: #196e8b;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
-  flex-basis:700px ;
-  max-width: 700px;
   font-size: 20px !important;
-  box-shadow: 0px 20px 20px 7px #6b6b6b;
+  box-shadow: 0px 10px 10px 7px #6b6b6b;
+  flex-basis: 1000px;
+  min-height: 600px;
+  margin: 40px 20px;
+  z-index: 2000;
 }
-.quiz-over button{
-    padding: 15px 25px;
-    font-size: 20px;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    outline: none;
-    border: 2px solid white;
-
+.quiz-over button {
+  padding: 15px 25px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid white;
+  margin-bottom: 20px;
 }
 
+.full.show-meme,
+.eighty.show-meme,
+.sixty.show-meme,
+.forty.show-meme,
+.twenty.show-meme,
+.zero.show-meme {
+  display: inline-block;
+}
+.full,
+.eighty,
+.sixty,
+.forty,
+.twenty,
+.zero{
+display: none;
+z-index: 10;
+align-items: center;
+font-family: monospace;
+text-align: center;
+justify-content: center;
+}
+
+
+.full img,
+.eighty img ,
+.sixty img,
+.forty img ,
+.twenty img ,
+.zero img {
+  width:200px;
+  height: 190px;
+  margin:10px 0;
+}
+
+
+
+/* javascript */
+.correct {
+  background-color: green !important;
+  transition: linear 0.3s;
+}
+.wrong {
+  background-color: red !important;
+  transition: linear 0.3s;
+}
+.disabled {
+  pointer-events: none;
+}
+
+
+
+
+/* Media Query */
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -163,18 +218,20 @@ h3 {
   .score .score-card div {
     margin-left: -40px;
   }
-}
+  .quiz-over{
+    margin: auto;
+    width: 100%;
+    font-size: 18px;
+    height: 80%;
 
-.correct {
-  background-color: green !important;
-  transition: linear 0.3s;
-}
-
-.wrong {
-  background-color: red !important;
-  transition: linear 0.3s;
-}
-
-.disabled {
-  pointer-events: none;
+  }
+  .quiz-over .box .good{
+    margin-top: 95px;
+  }
+  .quiz-over .box img{
+    margin-top: 0px;
+  }
+  .quiz-over .box .try{
+    margin-top: 0px;
+  }
 }
